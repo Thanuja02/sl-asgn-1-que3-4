@@ -164,25 +164,27 @@ In the given Java Code
 
 For importing useful packages
 bash
+```
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+```
 Create connection to database using:- \
+```
 Connection con =DriverManager.getConnection(DB_URL, USER, PASSWORD);
-
+```
 To run the Query in the database:- \
+```
 Statement stmt = con.createStatement();\
 ResultSet rs = stmt.executeQuery(QUERY);
-
+```
 Variable rs points to a row in the table and hence used in printing 
 data from each column of the table
 bash
+```
 System.out.print("Name: " + rs.getString("name"));
-System.out.print(", Roll_no: " + rs.getString("rollno"));
-System.out.print(", Email: " + rs.getString("email"));
-System.out.println(", Branch: " + rs.getString("branch"));
+```
 
 *Run the program and you will get the required result*
