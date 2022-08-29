@@ -94,12 +94,13 @@ bash
 CREATE DATABASE students;
 USE students;
 CREATE TABLE stud (name VARCHAR(20), rollno VARCHAR(10), email VARCHAR(25), branch VARCHAR(25));
+INSERT INTO stud
+VALUES ('Thanuja', 'BT20CSE021', 'bandamthanuja@gmail.com', 'CSE');
 INSERT INTO stud;
 VALUES ('Srinidhi', 'BT20CSE106', 'srinidhisanathana@gmail.com', 'Computer Science and Engineering');
 INSERT INTO stud
 VALUES ('Roohi', 'BT20CSE110', 'roohi@gmail.com', 'CSE');
-INSERT INTO stud
-VALUES ('Thanuja', 'BT20CSE021', 'bandamthanuja@gmail.com', 'CSE');
+
 ```
 To start replication used the following command in the slave mysql shell:
 bash
@@ -159,7 +160,7 @@ VALUES ('srinidhi');
 exit;
 ```
 
-### Java File Description
+## Java File Description
 In the given Java Code
 
 For importing useful packages
