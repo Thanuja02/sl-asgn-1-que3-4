@@ -90,6 +90,7 @@ sudo mysql -u root -p
 ```
 Create same database  which created in the master server and insert the same data
 bash
+```
 CREATE DATABASE students;
 USE students;
 CREATE TABLE stud (name VARCHAR(20), rollno VARCHAR(10), email VARCHAR(25), branch VARCHAR(25));
@@ -99,30 +100,34 @@ INSERT INTO stud
 VALUES ('Roohi', 'BT20CSE110', 'roohi@gmail.com', 'CSE');
 INSERT INTO stud
 VALUES ('Thanuja', 'BT20CSE021', 'bandamthanuja@gmail.com', 'CSE');
-
+```
 To start replication used the following command in the slave mysql shell:
 bash
+```
 CHANGE REPLICATION SOURCE TO
 SOURCE_HOST='master_server_ip',
 SOURCE_USER='slave_user',
 SOURCE_PASSWORD='password',
 SOURCE_LOG_FILE= saved_filename,
 SOURCE_LOG_POS= previously_saved_postion;
-     
+  ``` 
 Start replication by using :
 bash
+```
 START REPLICA;
-
+```
 TESTING REPLICATION PROCESS
 
 * In the master mysql server shell, insert data into the table using : 
 bash 
-INSERT INTO stud VALUES ('Srinidhi', 'BT20CSE106', 'srinidhi@greatest.co', 'CSE');
-
+```
+INSERT INTO stud VALUES ('Thanuja', 'BT20CSE21', 'thanuja@gmail.com', 'CSE');
+```
 * Display the table in the slave mysql server shell using:
 bash 
+```
 SELECT * FROM students;
-
+```
 Data added in the master table in the master database will be also added in the slave table in the slave database.
 Replication in master slave databases of mysql is done successfully.
 
@@ -141,17 +146,18 @@ Java program to get students details from MySQL database.
 After downloading Mysql in Windows, run thr following
 commands to create the database of students
 bash
-CREATE DATABASE students;
-use students
-create table stud (name VARCHAR(20), rollno VARCHAR(10), email VARCHAR(25), branch VARCHAR(25));
+```
+CREATE DATABASE StudentDetails;
+USE StudentDetails;
+CREATE TABLE students (id INT(6) AUTO_INCREMENT NOT NULL,name VARCHAR(30) NOT NULL);
 
-INSERT INTO stud
-VALUES ('Srinidhi', 'BT20CSE106', 'srinidhisanathana@gmail.com', 'Computer Science and Engineering');
-INSERT INTO stud
-VALUES ('Roohi', 'BT20CSE110', 'roohi@gmail.com', 'CSE');
-INSERT INTO stud
-VALUES ('Thanuja', 'BT20CSE021', 'bandamthanuja@gmail.com', 'CSE');
-quit
+INSERT INTO students
+VALUES ('thanuja');
+
+INSERT INTO students
+VALUES ('srinidhi');
+exit;
+```
 
 ### Java File Description
 In the given Java Code
